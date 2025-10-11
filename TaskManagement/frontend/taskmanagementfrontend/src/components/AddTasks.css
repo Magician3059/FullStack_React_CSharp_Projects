@@ -1,0 +1,88 @@
+/* Styles for AddTasks component */
+.at-container {
+  max-width: 900px;
+  margin: 1.25rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.at-heading {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.at-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.04);
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.at-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6eef7;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0f172a;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 120ms ease;
+  box-sizing: border-box;
+}
+
+.at-input:focus {
+  outline: none;
+  border-color: #60a5fa; /* blue-400 */
+  box-shadow: 0 8px 24px rgba(96,165,250,0.14);
+}
+
+.at-btn {
+  grid-column: 2 / 3;
+  justify-self: end;
+  padding: 10px 18px;
+  background: linear-gradient(90deg,#06b6d4,#3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.12);
+}
+
+.at-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(59,130,246,0.18);
+}
+
+.at-btn:active {
+  transform: translateY(0);
+  opacity: 0.96;
+}
+
+.at-btn-show {
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.06);
+  color: #0f172a;
+  font-weight: 600;
+  padding: 10px 14px;
+}
+
+/* Make form single-column on small screens */
+@media (max-width: 640px) {
+  .at-form {
+    grid-template-columns: 1fr;
+  }
+
+  .at-btn {
+    grid-column: 1 / 2;
+    width: 100%;
+  }
+}

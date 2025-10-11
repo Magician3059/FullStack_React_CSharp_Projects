@@ -1,0 +1,123 @@
+/* Styles for DisplayTasks component */
+.dt-container {
+  padding: 1.25rem;
+  max-width: 1100px;
+  margin: 1rem auto;
+  box-sizing: border-box;
+}
+
+.dt-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dt-table thead th {
+  text-align: left;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #0f172a, #0b1220);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dt-table tfoot td {
+  padding: 12px 16px;
+  background: #fbfdff;
+  border-top: 1px solid #eef2f7;
+}
+
+.dt-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eef2f7;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.dt-table tbody tr:hover td {
+  background: linear-gradient(90deg, rgba(2,6,23,0.02), rgba(2,6,23,0.02));
+}
+
+.dt-action-btn {
+  background: #ef4444; /* red-500 */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
+}
+
+.dt-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.18);
+}
+
+.dt-empty {
+  text-align: center;
+  padding: 28px;
+  color: #475569;
+}
+
+.dt-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg,#06b6d4,#3b82f6);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.12);
+}
+
+.dt-add-btn:hover { transform: translateY(-3px); }
+
+/* Responsive: stack cells into card-like rows on small screens */
+@media (max-width: 720px) {
+  .dt-table,
+  .dt-table thead,
+  .dt-table tbody,
+  .dt-table th,
+  .dt-table td,
+  .dt-table tr {
+    display: block;
+  }
+
+  .dt-table thead {
+    display: none;
+  }
+
+  .dt-table tbody tr {
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(2,6,23,0.04);
+    padding: 12px;
+  }
+
+  .dt-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: none;
+  }
+
+  .dt-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+    margin-right: 8px;
+  }
+
+  .dt-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
